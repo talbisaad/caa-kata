@@ -6,7 +6,7 @@ import com.caa.kata.model.command.Command;
 
 import java.math.BigDecimal;
 
-public class InvoiceTotalAmountCalculatorService extends InvoiceCalculatorService{
+public class InvoiceTtcAmountCalculatorService extends InvoiceCalculatorService{
 
     /**
      * @param command command

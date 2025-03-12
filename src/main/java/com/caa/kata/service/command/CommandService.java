@@ -27,6 +27,18 @@ public class CommandService implements ICommandService {
     }
 
     /**
+     * Calculate Command Tax and HT amounts then add it to invoice command list
+     *
+     * @param invoice
+     * @param command
+     */
+    @Override
+    public void purchaseCommand(Invoice invoice, Command command) {
+        calculateCommandAmounts(command);
+        invoice.getCommands().add(command);
+    }
+
+    /**
      * @param command a line of invoice
      *                This method set TTC and TAX amount for given command
      */
@@ -44,9 +56,9 @@ public class CommandService implements ICommandService {
             //calcul du Montant des taxes de la commande
             BigDecimal taxAmount = getTaxAmount(command, product, taxStrategy);
             //calcul du Montant hors taxe de la commande
-            BigDecimal HtAmount = getHtAmount(command, product);
+            BigDecimal htAmount = getHtAmount(command, product);
 
-            command.setTtcAmount(HtAmount.add(taxAmount));
+            command.setTtcAmount(htAmount.add(taxAmount));
             command.setTaxAmount(taxAmount);
 
         } catch (IllegalArgumentException e) {
@@ -58,18 +70,6 @@ public class CommandService implements ICommandService {
         }
     }
 
-
-    /**
-     * Calculate Command Tax and HT amounts then add it to invoice command list
-     *
-     * @param invoice
-     * @param command
-     */
-    @Override
-    public void purchaseCommand(Invoice invoice, Command command) {
-        calculateCommandAmounts(command);
-        invoice.getCommands().add(command);
-    }
 
     private BigDecimal getHtAmount(Command command, Product product) {
         ValidatorService.validateObject(product.price(), Constants.PRODUCT_PRICE);

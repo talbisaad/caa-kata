@@ -1,16 +1,19 @@
-package com.caa.kata.service.invoice.display;
+package com.caa.kata.service.invoice.generation;
 
 import com.caa.kata.utils.constant.Constants;
 import com.caa.kata.model.command.Command;
 import com.caa.kata.model.invoice.Invoice;
 
-public abstract class InvoiceDisplayService {
+public abstract class InvoiceGeneratorService {
+
 
     /**
-     * Display invoice's input/output data
+     * Generate invoice's input/output data
      * @param invoice
      */
-    public abstract void display(Invoice invoice);
+    public abstract String generateInvoice(Invoice invoice);
+
+
     /**
      * Display common command line in invoice
      * @param command

@@ -12,6 +12,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/../kata/kata/pom.xml" />
+        <option value="$PROJECT_DIR$/../vat-kata/pom.xml" />
       </set>
     </option>
   </component>

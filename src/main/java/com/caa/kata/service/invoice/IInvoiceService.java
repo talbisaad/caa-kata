@@ -14,16 +14,17 @@ public interface IInvoiceService {
      * @param invoice
      */
     void calculateTotalTtcAmount(Invoice invoice);
+
     /**
-     * Display invoice's input data
+     * Generate invoice's input data
      * @param invoice
      */
-    void displayInvoiceInput(Invoice invoice);
+    String generateInvoiceInput(Invoice invoice);
     /**
-     * Display invoice's output data
+     * Generate invoice's output data
      * @param invoice
      */
-    void displayInvoiceOutput(Invoice invoice);
+    String generateInvoiceOutput(Invoice invoice);
 
 
 }

@@ -16,12 +16,11 @@ public final class Constants {
     public static final String TAX_STRATEGIES_LIST= "TAX STRATEGIES LIST";
     public static final String PRODUCT= "PRODUCT";
     public static final String COMMAND= "COMMAND";
+    public static final String AMOUNT= "AMOUNT";
     public static final String COMMAND_QUANTITY= "COMMAND QUANTITY";
     public static final String COMMAND_LIST= "COMMAND LIST";
     public static final String INVOICE= "INVOICE";
     public static final String PRODUCT_PRICE = "PRODUCT PRICE";
-
-
 
 
 

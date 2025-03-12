@@ -5,7 +5,9 @@ import com.caa.kata.utils.constant.Constants;
 import java.util.List;
 
 public final class ValidatorService {
+    private ValidatorService() {
 
+    }
 
     public static void validateObject(Object object, String name) {
         if (object == null) {
